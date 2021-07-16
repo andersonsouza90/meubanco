@@ -1,0 +1,37 @@
+<main class="container" *ngIf="usuario">
+
+  <div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6 class="border-bottom mt-3">Meu Perfil</h6>
+
+    <div class="d-flex text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Conta ID:</strong>
+        {{usuario.conta.id}}
+      </p>
+    </div>
+
+    <div class="d-flex text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Nome:</strong>
+        {{usuario.nome}} {{usuario.sobrenome}}
+      </p>
+    </div>
+    <div class="d-flex text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Email</strong>
+        {{usuario.email}}
+      </p>
+    </div>
+
+    <div class="d-flex text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Endereço:</strong>
+        {{usuario.endereco}} - {{usuario.numero}} - {{usuario.complemento}}  - {{usuario.bairro}} - {{usuario.cidade}} -
+        {{usuario.uf}}
+      </p>
+    </div>
+
+  </div>
+
+
+</main>

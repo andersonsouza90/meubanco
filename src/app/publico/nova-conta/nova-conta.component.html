@@ -1,0 +1,145 @@
+<main class="container" >
+
+  <div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6 class="border-bottom mt-3">CRIAR NOVA CONTA</h6>
+
+  <form class="row g-3" #contaForm="ngForm">
+    <div class="col-md-6">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" maxlength="20" name="nome" required [(ngModel)]="usuario.nome"  #uNome="ngModel" [ngClass]="{'is-invalid': uNome.invalid}">
+      <div class="invalid-feedback">
+          <span>Campo obrigatório</span>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="sobrenome" class="form-label">Sobrenome</label>
+      <input type="text" class="form-control" maxlength="20" name="sobrenome" required [(ngModel)]="usuario.sobrenome" #uSobrenome="ngModel" [ngClass]="{'is-invalid': uSobrenome.invalid}">
+     <div class="invalid-feedback">
+          <span>Campo obrigatório</span>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" name="email" maxlength="60" required [(ngModel)]="usuario.email" #uEmail="ngModel" [ngClass]="{'is-invalid': uEmail.invalid}">
+     <div class="invalid-feedback">
+          <span>Campo obrigatório</span>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="cep" class="form-label">CEP</label>
+      <input type="text" class="form-control" name="cep" maxlength="10" required [(ngModel)]="usuario.cep" (blur)="buscaCep()" #uCep="ngModel" [ngClass]="{'is-invalid': uCep.invalid}">
+     <div class="invalid-feedback">
+          <span>Campo obrigatório</span>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="endereco" class="form-label">Endereco</label>
+      <input type="text" class="form-control" maxlength="30" name="endereco" required [(ngModel)]="usuario.endereco" #uEnd="ngModel" [ngClass]="{'is-invalid': uEnd.invalid}">
+     <div class="invalid-feedback">
+          <span>Campo obrigatório</span>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="numero" class="form-label">Número</label>
+      <input type="text" class="form-control" maxlength="10" name="numero" required [(ngModel)]="usuario.numero" #uNum="ngModel" [ngClass]="{'is-invalid': uNum.invalid}">
+     <div class="invalid-feedback">
+          <span>Campo obrigatório</span>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="complemento" class="form-label">Complemento</label>
+      <input type="text" class="form-control" maxlength="25" name="Complemento" [(ngModel)]="usuario.complemento">
+     <div class="invalid-feedback">
+          <span>Campo obrigatório</span>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="bairro" class="form-label">Bairro</label>
+      <input type="text" class="form-control" maxlength="20" name="bairro" required [(ngModel)]="usuario.bairro" #uBairro="ngModel" [ngClass]="{'is-invalid': uBairro.invalid}">
+     <div class="invalid-feedback">
+          <span>Campo obrigatório</span>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="cidade" class="form-label">Cidade</label>
+      <input type="text" class="form-control" maxlength="20" name="cidade" required [(ngModel)]="usuario.cidade" #uCidade="ngModel" [ngClass]="{'is-invalid': uCidade.invalid}">
+     <div class="invalid-feedback">
+          <span>Campo obrigatório</span>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="estado" class="form-label">Estado</label>
+      <select name="estado" class="form-select" required [(ngModel)]="usuario.uf" #uUf="ngModel" [ngClass]="{'is-invalid': uUf.invalid}">
+        <option value="">SELECIONE</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+      </select>
+     <div class="invalid-feedback">
+          <span>Campo obrigatório</span>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="bairro" class="form-label">Senha</label>
+      <input type="password" class="form-control" maxlength="15" name="senha" required [(ngModel)]="usuario.senha" #uSenha="ngModel" [ngClass]="{'is-invalid': uSenha.invalid}">
+     <div class="invalid-feedback">
+          <span>Campo obrigatório</span>
+      </div>
+
+      <div id="msgConfirmacao" *ngIf="usuario.senha != conf_senha">
+          <span>As senhas não são iguais! Confirme a senha.</span>
+      </div>
+
+    </div>
+
+    <div class="col-md-6">
+      <label for="cidade" class="form-label">Confirmar Senha</label>
+      <input type="password" class="form-control" maxlength="15" name="conf_senha" required [(ngModel)]="conf_senha" #uconf_senha="ngModel" [ngClass]="{'is-invalid': uconf_senha.invalid}">
+     <div class="invalid-feedback">
+          <span>Campo obrigatório</span>
+      </div>
+    </div>
+
+
+    <div class="col-12">
+      <button [disabled]="contaForm.invalid || usuario.senha != conf_senha" type="submit" class="btn btn-primary  float-end" (click)="salvarConta()">Criar Conta</button>
+      <button type="button" class="btn btn-warning me-3 float-end" routerLink="/">Cancelar</button>
+    </div>
+  </form>
+  </div>
+
+</main>

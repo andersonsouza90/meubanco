@@ -1,0 +1,23 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first logo-login">
+      <h4 class="text-primary">{{nomeApp}}</h4>
+    </div>
+
+    <!-- Login Form -->
+    <form method="post">
+      <input type="text" id="login" class="fadeIn second" name="login" required [(ngModel)]="usuario.email">
+      <input type="password" id="senha" class="fadeIn third" name="senha" required [(ngModel)]="usuario.senha">
+      <input type="submit" (click)="login()" class="fadeIn fourth" value="Entrar" >
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" routerLink="/novaConta">Criar Conta Online</a>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container" [hidden]="esconderBarra()">
+  <nav class="navbar navbar-expand-md navbar-light bg-light" >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">IBank</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" >Olá, {{nomeCabecalho}}</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Perfil
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/perfil">Meu Perfil</a></li>
+              <li><a class="dropdown-item" routerLink="/perfil/editar">Editar Perfil</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Serviços
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/pix" >PIX</a></li>
+              <li><a class="dropdown-item" routerLink="/pagarBoleto">Pagar Boleto</a></li>
+              <li><a class="dropdown-item" routerLink="/depositar">Depositar</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item justify-content-end">
+            <a (click)="logout()" class="nav-link active " aria-current="page" >Sair</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  </div>

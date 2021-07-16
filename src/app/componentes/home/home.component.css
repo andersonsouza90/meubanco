@@ -1,0 +1,42 @@
+
+.card{
+  margin-top: 10px;
+  /* box-shadow: 5px 5px black; */
+  background-color: #fff;
+  border: 2px solid #d0d0d0;
+  color: #393b3d;
+  width: 18rem;
+  border-radius: 15px;
+}
+
+.badge{
+  padding: 10px;
+  margin: 5px;
+}
+
+.row{
+  margin-bottom: 70px;
+}
+
+.col-3{
+  border: 1px solid black;
+}
+
+
+.col-card{
+  width: 20rem;
+}
+
+.container{
+  height: 500px;
+  border-radius: 10px;
+}
+
+.gradiente {
+  background-color:#f0f0f0; /* For browsers that do not support gradients */
+  /* background-image: linear-gradient(#1b234a, white); */
+}
+
+.badge{
+  cursor: pointer;
+}

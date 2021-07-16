@@ -1,0 +1,31 @@
+<div class="container gradiente">
+  <div class="row justify-content-md-center" *ngIf="usuario">
+
+    <div class="col col-md-6 col-card d-flex justify-content-center" >
+      <div class="card ">
+
+        <div class="card-body">
+          <h5 class="card-title">Minha Conta</h5>
+          <p class="fw-light">Saldo disponível</p>
+          <p class="fw-bolder">{{usuario.conta.saldo | currency : 'BRL'}}</p>
+          <span class="badge bg-primary" routerLink="/extrato">Ver Extrato</span>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-md-6 col-card d-flex justify-content-center" >
+      <div class="card" >
+
+        <div class="card-body">
+          <h5 class="card-title">Serviços</h5>
+          <span class="badge bg-primary" routerLink="/pix">PIX</span>
+          <span class="badge bg-primary" routerLink="/pagarBoleto">Pagar Boleto</span>
+          <span class="badge bg-primary" routerLink="/depositar">Depositar</span>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
