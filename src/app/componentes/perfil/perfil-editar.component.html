@@ -1,7 +1,7 @@
 <main class="container" >
 
-  <div class="my-3 p-3 bg-body rounded shadow-sm">
-    <h6 class="border-bottom mt-3">Editar Perfil</h6>
+  <div class=" p-3 bg-body rounded shadow-sm">
+    <h6 class="border-bottom ">Editar Perfil</h6>
 
   <form class="row g-3" #perfilForm="ngForm">
     <div class="col-md-6">
@@ -116,7 +116,7 @@
 
     <div class="col-12">
       <button [disabled]="perfilForm.invalid" type="submit" class="btn btn-primary  float-end" (click)="salvarPerfil()">Salvar</button>
-      <button type="butto" class="btn btn-default me-3 float-end" routerLink="/home">Voltar</button>
+      <button type="butto" class="btn btn-warning me-3 float-end" routerLink="/home">Voltar</button>
     </div>
   </form>
   </div>

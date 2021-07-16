@@ -5,3 +5,7 @@
 a{
   cursor: pointer;
 }
+
+.navbar-collapse{
+  font-size: 0.931em;
+}

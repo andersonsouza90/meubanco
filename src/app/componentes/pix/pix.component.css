@@ -1,11 +1,11 @@
 .container{
-  height: 500px;
+  height: 570px;
   border-radius: 10px;
   margin-top: 10px;
   background-color:#f0f0f0;
   padding: 10px;
+  overflow-y: scroll;
 }
-
 
 .gradiente {
   background-color:#f0f0f0; /* For browsers that do not support gradients */
@@ -18,7 +18,32 @@ tr{
 }
 
 #nomeSelecionado{
+  height: 25px;
+  line-height: 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+#nomeSelecionado, .resumo{
   padding: 10px;
   width: 100%;
   border-radius: 5px;
+}
+
+#divScroll{
+  height: 315px;
+  overflow-y: scroll;
+}
+
+@media (max-width: 576px){
+  input[name="filter"]{
+    height: 25px;
+  }
+
+  #divScroll{
+    height: 300px;
+    overflow-y: scroll;
+  }
+
+
 }

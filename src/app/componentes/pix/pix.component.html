@@ -1,12 +1,12 @@
 <div class="container" >
 
-  <div class="my-3 p-3 bg-body rounded shadow-sm ">
-    <h6 class="border-bottom mt-3">PIX - Passo {{step}}/3</h6>
+  <div class=" p-3 bg-body rounded shadow-sm ">
+    <h6 class="border-bottom ">PIX - Passo {{step}}/3</h6>
 
     <form >
       <div class="form-row" *ngIf="step == 1">
         <div class="form-group col-md-12">
-          <label for="valor">* Informe o valor</label>
+          <label for="valor">* INFORME O VALOR</label>
           <input type="number" class="form-control" name="valorPix" placeholder="" [(ngModel)]='valorPix'>
         </div>
         <div class="form-group col-md-6">
@@ -17,15 +17,16 @@
 
       <div class="form-row"  *ngIf="step == 2">
         <div class="form-group col-md-12">
-          <label for="destino">* Informe o destino</label>
+          <label for="destino">* INFORME O DESTINO</label>
 
-          <input type="text" class="form-control mt-3" [(ngModel)]="filter" name="filter" placeholder="Filtrar Nome destino" >
+          <input type="text" class="form-control " [(ngModel)]="filter" name="filter" placeholder="Filtrar Nome destino" >
 
 
           <div class="btn-info mt-3 mb-3" id="nomeSelecionado" *ngIf="contaSelecionada != 0">
-            Conta Selecionada: {{contaSelecionada}} - {{nomeSelecionado}}
+            Pix para: {{contaSelecionada}} - {{nomeSelecionado}}
           </div>
 
+          <div id="divScroll">
           <table class="table table-striped">
             <thead>
               <th>Conta</th>
@@ -38,22 +39,23 @@
               </tr>
             </tbody>
           </table>
+        </div>
 
         </div>
       </div>
 
       <div class="form-row"  *ngIf="step == 3">
-        <h4>Transferindo</h4>
+        <h4>TRANSFERINDO</h4>
         <div class="form-group col-md-6">
           <h6>Resumo e confirmação</h6>
 
-          <div class="btn-info mt-3 mb-3" id="nomeSelecionado" *ngIf="contaSelecionada != 0">
+          <div class="btn-info mt-3 mb-3 resumo" *ngIf="contaSelecionada != 0">
             Valor: {{valorPix | currency: 'BRL'}}
           </div>
 
           <h6>Para</h6>
 
-          <div class="btn-info mt-3 mb-3" id="nomeSelecionado" *ngIf="contaSelecionada != 0">
+          <div class="btn-info mt-3 mb-3 resumo" *ngIf="contaSelecionada != 0">
             {{contaSelecionada}} - {{nomeSelecionado}}
           </div>
 
@@ -65,9 +67,9 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-secondary me-3 mt-3"  *ngIf="step > 1" (click)="previous()">VOLTAR</button>
-      <button type="submit" class="btn btn-secondary mt-3"  *ngIf="step < 3" (click)="next()">PRÓXIMO</button>
-      <button type="submit" class="btn btn-primary mt-3"  *ngIf="step == 3" (click)="confirmarTransacao()">CONFIRMAR</button>
+      <button type="submit" class="btn btn-warning me-3 mt-3"  *ngIf="step > 1" (click)="previous()">VOLTAR</button>
+      <button type="submit" class="btn btn-primary mt-3"  *ngIf="step < 3" (click)="next()">PRÓXIMO</button>
+      <button type="submit" class="btn btn-success mt-3"  *ngIf="step == 3" (click)="confirmarTransacao()">CONFIRMAR</button>
 
 
     </form>

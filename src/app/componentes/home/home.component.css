@@ -1,3 +1,7 @@
+.container{
+  height: 500px;
+  border-radius: 10px;
+}
 
 .card{
   margin-top: 10px;
@@ -25,11 +29,6 @@
 
 .col-card{
   width: 20rem;
-}
-
-.container{
-  height: 500px;
-  border-radius: 10px;
 }
 
 .gradiente {
