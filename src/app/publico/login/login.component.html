@@ -9,8 +9,8 @@
 
     <!-- Login Form -->
     <form method="post">
-      <input type="text" id="login" class="fadeIn second" name="login" required [(ngModel)]="usuario.email">
-      <input type="password" id="senha" class="fadeIn third" name="senha" required [(ngModel)]="usuario.senha">
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Informe o email" required [(ngModel)]="usuario.email">
+      <input type="password" id="senha" class="fadeIn third" name="senha" placeholder="Informe a senha" required [(ngModel)]="usuario.senha">
       <input type="submit" (click)="login()" class="fadeIn fourth" value="Entrar" >
     </form>
 
