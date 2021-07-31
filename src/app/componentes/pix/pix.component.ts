@@ -32,7 +32,7 @@ export class PixComponent implements OnInit {
 
   confirmarTransacao(): void{
     if(this.msgPix == ''){
-      this.msgPix = 'Transferência_PIX';
+      this.msgPix = 'Transferencia_PIX';
     }
     this.pixService.enviarTransacao(this.id_usuario, this.id_destino, this.valorPix, this.msgPix).subscribe(data =>{
       //console.log('retorno');

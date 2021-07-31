@@ -19,8 +19,16 @@ export class PixService{
 
   }
 
+  // enviarTransacao(id_origem: number, id_destino: number, valor: number, msgPix: String): Observable<any>{
+  //   return this.http.get<String>(AppConstants.baseUrlPix + id_origem+'/'+id_destino+'/'+valor+'/'+msgPix,
+  //   {responseType: 'text' as 'json'}).pipe(
+  //     map(retorno => this.exibirRetorno(retorno)),
+  //     catchError(erro => this.exibeErro(erro))
+  //   );
+  // }
+
   enviarTransacao(id_origem: number, id_destino: number, valor: number, msgPix: String): Observable<any>{
-    return this.http.get<String>(AppConstants.baseUrlPix + id_origem+'/'+id_destino+'/'+valor+'/'+msgPix,
+    return this.http.post<String>(AppConstants.baseUrlPix + id_origem+'/'+id_destino+'/'+valor+'/'+msgPix, null,
     {responseType: 'text' as 'json'}).pipe(
       map(retorno => this.exibirRetorno(retorno)),
       catchError(erro => this.exibeErro(erro))
@@ -28,7 +36,7 @@ export class PixService{
   }
 
   exibeErro(e: any):Observable<any>{
-    //console.log(e);
+    console.log(e);
     this.exibirMensagem('Erro!', e.error, 'toast-error');
     return EMPTY;
   }
